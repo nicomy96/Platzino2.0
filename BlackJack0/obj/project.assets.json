@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicom\\Downloads\\cursos-BI\\curso intro C#\\BlackJack0\\BlackJack0\\BlackJack0.csproj",
+      "projectUniqueName": "C:\\Users\\nicom\\Downloads\\cursos-BI\\C# information\\curso intro C#\\BlackJack0\\BlackJack0\\BlackJack0.csproj",
       "projectName": "BlackJack0",
-      "projectPath": "C:\\Users\\nicom\\Downloads\\cursos-BI\\curso intro C#\\BlackJack0\\BlackJack0\\BlackJack0.csproj",
+      "projectPath": "C:\\Users\\nicom\\Downloads\\cursos-BI\\C# information\\curso intro C#\\BlackJack0\\BlackJack0\\BlackJack0.csproj",
       "packagesPath": "C:\\Users\\nicom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicom\\Downloads\\cursos-BI\\curso intro C#\\BlackJack0\\BlackJack0\\obj\\",
+      "outputPath": "C:\\Users\\nicom\\Downloads\\cursos-BI\\C# information\\curso intro C#\\BlackJack0\\BlackJack0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicom\\AppData\\Roaming\\NuGet\\NuGet.Config",
