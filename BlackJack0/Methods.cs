@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BlackJack0
@@ -37,27 +38,37 @@ namespace BlackJack0
         public static int SelecionarCasillaCasa(List<int> tablero, int marcaCasa, int marcaJugador, int turnoCasa)
         {
             Random random = new Random();
-            int casilla = 4;
+            int casilla = random.Next(0, 8);
+
             if (marcaCasa == 0 && tablero[4] == 4)
                 casilla = 4;
             else if (marcaCasa == 0 && SumaCasillas(tablero, 0, 2, 6) + tablero[8] == 10 && turnoCasa < 3)
             {
                 casilla = 2 * random.Next(0, 3) + 1;
-                casilla = VerificarCasillaCasaCentral(casilla, tablero);
+                Console.WriteLine("Parar la jugada de la esquina");
+                return casilla;
+            }
+            else if (GanarTriqui(tablero, marcaJugador) != -1)
+            {
+                Console.WriteLine("Parar la victoria del jugador");
+                casilla = GanarTriqui(tablero, marcaJugador);
             }
             else if (GanarTriqui(tablero, marcaCasa) != -1)
+            {
+                Console.WriteLine("Ganar");
                 casilla = GanarTriqui(tablero, marcaCasa);
-            else if (GanarTriqui(tablero, marcaJugador) != -1)
-                casilla = GanarTriqui(tablero, marcaJugador);
+            }
             else if (CompletarTriqui(tablero, marcaCasa) != -1)
+            {
                 casilla = CompletarTriqui(tablero, marcaCasa);
+                Console.WriteLine("Completar el triqui");
+            }
             else
             {
                 if (marcaCasa == 0 && tablero[4] == 1 && SumaCasillas(tablero, 0, 2, 6) + tablero[8] == 16)
                 {
-                    Console.WriteLine("Decidí");
+
                     casilla = 2 * random.Next(0, 4);
-                    casilla = VerificarCasillaCasaEsquina(casilla, tablero);
                 }
                 else if (marcaCasa == 1)
                 {
@@ -67,10 +78,8 @@ namespace BlackJack0
                             casilla = BuscarCasilla(tablero, i, i + 3, i + 6);
                     }
                 }
-
-
             }
-
+            casilla = VerificarCasillaCasa(casilla, tablero);
             return casilla;
         }
         public static int VerificarCasilla(int casilla, List<int> tablero)
@@ -94,19 +103,16 @@ namespace BlackJack0
 
             return casilla;
         }
-        public static int VerificarCasillaCasaCentral(int casilla, List<int> tablero)
+      
+        public static int VerificarCasillaCasa(int casilla, List<int> tablero)
         {
             Random random = new();
+            int i = 0;
+            while ((tablero[casilla] == 0 || tablero[casilla] == 1) && i < tablero.Count)
             {
-                casilla = 2 * random.Next(0, 3) + 1;
-            }
-            return casilla;
-        }
-        public static int VerificarCasillaCasaEsquina(int casilla, List<int> tablero)
-        {
-            Random random = new();
-            {
-                casilla = 2 * random.Next(0, 4);
+                Console.WriteLine("Busco un espacio vacio " + i);
+                casilla = i;
+                i++;
             }
             return casilla;
         }
@@ -143,38 +149,39 @@ namespace BlackJack0
             return posiblesCasillas[0];
 
         }
-        public static int CompletarTriqui(List<int> tablero, int marcaCasa)
+        public static int CompletarTriqui(List<int> tablero, int marca)
         {
             int a = 0;
-
-            if (SumaCasillas(tablero, 0, 4, 8) == (8 + marcaCasa))
-                return BuscarCasillaEstrategica(tablero, 0, 4, 8, marcaCasa);
-            else if (SumaCasillas(tablero, 2, 4, 6) == (8 + marcaCasa))
-                return BuscarCasillaEstrategica(tablero, 2, 4, 6, marcaCasa);
+            
+            if (SumaCasillas(tablero, 0, 4, 8) == (8 + marca))
+                return BuscarCasillaEstrategica(tablero, 0, 4, 8, marca);
+            else if (SumaCasillas(tablero, 2, 4, 6) == (8 + marca))
+                return BuscarCasillaEstrategica(tablero, 2, 4, 6, marca);
             for (int i = 0; i < 3; i++)
             {
-                if (SumaCasillas(tablero, a, a + 1, a + 2) == (8 + marcaCasa))
-                    return BuscarCasillaEstrategica(tablero, a, a + 1, a + 2, marcaCasa);
-                else if (SumaCasillas(tablero, i, i + 3, i + 6) == (8 + marcaCasa))
-                    return BuscarCasillaEstrategica(tablero, i, i + 3, i + 6, marcaCasa);
+                if (SumaCasillas(tablero, a, a + 1, a + 2) == (8 + marca))
+                    return BuscarCasillaEstrategica(tablero, a, a + 1, a + 2, marca);
+                else if (SumaCasillas(tablero, i, i + 3, i + 6) == (8 + marca))
+                    return BuscarCasillaEstrategica(tablero, i, i + 3, i + 6, marca);
 
                 a += 3;
             }
             return -1;
         }
-        public static int GanarTriqui(List<int> tablero, int marcaCasa)
+        public static int GanarTriqui(List<int> tablero, int marca)
         {
             int a = 0;
-            if (SumaCasillas(tablero, 0, 4, 8) == (4 + 2 * marcaCasa))
+            
+            if (SumaCasillas(tablero, 0, 4, 8) == (4 + 2 * marca))
                 return BuscarCasilla(tablero, 0, 4, 8);
-            else if (SumaCasillas(tablero, 2, 4, 6) == (4 + 2 * marcaCasa))
+            else if (SumaCasillas(tablero, 2, 4, 6) == (4 + 2 * marca))
                 return BuscarCasilla(tablero, 2, 4, 6);
 
             for (int i = 0; i < 3; i++)
             {
-                if (SumaCasillas(tablero, a, a + 1, a + 2) == (4 + 2 * marcaCasa))
+                if (SumaCasillas(tablero, a, a + 1, a + 2) == (4 + 2 * marca))
                     return BuscarCasilla(tablero, a, a + 1, a + 2);
-                else if (SumaCasillas(tablero, i, i + 3, i + 6) == (4 + 2 * marcaCasa))
+                else if (SumaCasillas(tablero, i, i + 3, i + 6) == (4 + 2 * marca))
                     return BuscarCasilla(tablero, i, i + 3, i + 6);
 
                 a += 3;

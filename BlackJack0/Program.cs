@@ -26,8 +26,8 @@ class Program
         List<string> juegos = new()
             {
                 "Pedir más Platzicoins",
-                "21",
-                "Tres en raya",
+                "21                 =>      50 platzicoins   |   Ganancia: 2:1",
+                "TRES EN RAYA       =>      200 platzicoins  |   Ganancia: 10:1",
                 "Salir"
             };
 
@@ -117,12 +117,12 @@ class Program
                     Console.Clear();
                     break;
                 case 1:
+                    Console.Clear();
                     if (Methods.VerificarJugabilidad(platziCoins - 1, 50))
                     {
                         opcion = -1;
                         break;
                     }
-                    Console.Clear();
                     puntajeJugador = 0;
                     puntajeCasa = 0;
                     Console.WriteLine("BIENVENIDO AL JUEGO DE 21\n " +
@@ -169,13 +169,12 @@ class Program
                     break;
 
                 case 2:
-                    
+                    Console.Clear();
                     if (Methods.VerificarJugabilidad(platziCoins - 1, 200))
                     {
                         opcion = -1;
                         break;
                     }
-                    Console.Clear();
                     Console.WriteLine("BIENVENIDO AL TRES EN RAYA\n " +
                        $"Tienes {platziCoins - 1} platziCoins para jugar. " +
                        "En este juego debes apostar mínimo 200 platziCoins\n" +
@@ -229,7 +228,7 @@ class Program
                     if (juegoActivo == marcaJugador)
                     {
                         Console.WriteLine("Ganaste ");
-                        platziCoins += Methods.ResultadoCoins(apuesta, true);
+                        platziCoins += Methods.ResultadoCoins(apuesta, true)*10;
                     }
                     else if(juegoActivo == marcaCasa)
                     {
