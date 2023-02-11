@@ -27,7 +27,8 @@ class Program
             {
                 "Pedir más Platzicoins",
                 "21",
-                "Tres en raya"
+                "Tres en raya",
+                "Salir"
             };
 
         while (platziCoins != 0)
@@ -242,7 +243,9 @@ class Program
                         
                     opcion = Methods.VerificarCoins(platziCoins, opcion);
                     break;
-
+                case 3:
+                    platziCoins = 0;
+                    break;
                 default:
                     Console.WriteLine("Opción no valida, oprime enter para volver a elegir");
                     Console.ReadLine();

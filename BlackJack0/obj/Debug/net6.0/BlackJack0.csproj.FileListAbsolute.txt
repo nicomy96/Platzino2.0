@@ -13,3 +13,18 @@ C:\Users\nicom\Downloads\cursos-BI\curso intro C#\BlackJack0\BlackJack0\obj\Debu
 C:\Users\nicom\Downloads\cursos-BI\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.pdb
 C:\Users\nicom\Downloads\cursos-BI\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.genruntimeconfig.cache
 C:\Users\nicom\Downloads\cursos-BI\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\ref\BlackJack0.dll
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\bin\Debug\net6.0\BlackJack0.exe
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\bin\Debug\net6.0\BlackJack0.deps.json
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\bin\Debug\net6.0\BlackJack0.runtimeconfig.json
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\bin\Debug\net6.0\BlackJack0.dll
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\bin\Debug\net6.0\BlackJack0.pdb
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.csproj.AssemblyReference.cache
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.AssemblyInfoInputs.cache
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.AssemblyInfo.cs
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.csproj.CoreCompileInputs.cache
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.dll
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\refint\BlackJack0.dll
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.pdb
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\BlackJack0.genruntimeconfig.cache
+C:\Users\nicom\Downloads\cursos-BI\C# information\curso intro C#\BlackJack0\BlackJack0\obj\Debug\net6.0\ref\BlackJack0.dll
